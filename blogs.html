@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DarshanConstraction — Blogs & Insights</title>
+
+  <!-- Primary SEO meta -->
+  <meta name="description"
+    content="DarshanConstraction blog: construction insights, sustainability, cost planning and project best-practices. Learn how to build better — guides, trends & case studies." />
+  <meta name="keywords"
+    content="construction blog, building trends, sustainability, HVAC, project planning, DarshanConstraction" />
+  <link rel="canonical" href="https://your-site.example/blogs.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DarshanConstraction — Blogs & Insights" />
+  <meta property="og:description"
+    content="Construction insights and guides: sustainability, cost planning, materials, safety, and design trends from DarshanConstraction." />
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1486304873000-235643847519?q=80&w=1200&auto=format" />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+    :root {
+
+      --max: 1100px;
+    }
+
+    /* Hero */
+    .hero-small {
+      padding: 72px 16px 48px;
+      background-image: url('https://images.unsplash.com/photo-1486304873000-235643847519?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-small::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6, 12, 8, 0.36), rgba(6, 12, 8, 0.36));
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .hero-small h1 {
+      font-size: 32px;
+      margin: 0 0 8px;
+      font-weight: 800;
+      text-shadow: 0 8px 20px rgba(2, 8, 6, 0.6);
+    }
+
+    .hero-small p {
+      margin: 0 auto;
+      max-width: 820px;
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 600;
+    }
+
+    /* container */
+    .blogs-section {
+      max-width: var(--max);
+      margin: 28px auto;
+      padding: 20px 16px;
+    }
+
+    /* grid */
+    .blogs-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    @media(min-width:720px) {
+      .blogs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(min-width:1100px) {
+      .blogs-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .blog-card {
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(8, 12, 10, 0.06);
+      transition: transform .28s, box-shadow .28s;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 80px rgba(8, 12, 10, 0.12);
+    }
+
+    .blog-img {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .blog-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .blog-meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .blog-title {
+      font-weight: 800;
+      margin: 0;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .blog-excerpt {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      margin: 4px 0 0;
+      flex: 1;
+    }
+
+    .blog-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .read-more {
+      font-weight: 800;
+      color: var(--brand-2);
+      text-decoration: none;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(8, 12, 20, 0.6);
+      z-index: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+    }
+
+    .modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      width: calc(100% - 40px);
+      max-width: 980px;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 40px 120px rgba(8, 12, 10, 0.28);
+    }
+
+    .modal-img {
+      height: 320px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .modal-content {
+      padding: 20px;
+      max-height: 60vh;
+      overflow: auto;
+    }
+
+    .modal-content h2 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .modal-content p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .modal-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    /* small helpers */
+    .tag {
+      background: rgba(15, 111, 83, 0.08);
+      padding: 6px 8px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .post-meta-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .search-row {
+      display: flex;
+      justify-content: center;
+      margin: 18px 0;
+    }
+
+    .search-row input {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 0;
+      width: 360px;
+      box-shadow: 0 10px 30px rgba(8, 12, 10, 0.04);
+    }
+
+    /* accessibility */
+    .sr-only {
+      position: absolute;
+      left: -9999px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER (consistent) -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 64 64" class="logo" aria-hidden="true">
+          <rect x="6" y="26" width="10" height="26" rx="2" />
+          <rect x="22" y="18" width="10" height="34" rx="2" />
+          <rect x="38" y="10" width="10" height="42" rx="2" />
+        </svg>
+        <div class="brand-texts"><span class="brand-title">Darshan Constraction</span><span class="brand-sub">Quality •
+            Trust • On-time</span></div>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About us</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="blogs.html" class="nav-link active" aria-current="page" style="color:var(--brand)">Blogs</a>
+        <a href="contact.html" class="nav-link btn-ghost">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-primary">Get Quote</a>
+        <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span class="hb top"></span>
+          <span class="hb mid"></span>
+          <span class="hb bot"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- drawer -->
+    <div id="drawer" class="drawer" aria-hidden="true">
+      <div class="drawer-inner">
+        <button id="drawerClose" class="drawer-close" aria-label="Close menu">&times;</button>
+        <nav class="drawer-nav">
+          <a href="index.html" class="drawer-link">Home</a>
+          <a href="about.html" class="drawer-link">About us</a>
+          <a href="projects.html" class="drawer-link">Projects</a>
+          <a href="blogs.html" class="drawer-link">Blogs</a>
+          <a href="contact.html" class="drawer-link">Contact</a>
+        </nav>
+        <div class="drawer-cta">
+          <a href="#contact" class="btn btn-primary full">Request Quote</a>
+          <a href="tel:+911234567890" class="btn btn-outline full">Call: +91 12345 67890</a>
+        </div>
+      </div>
+    </div>
+    <div id="backdrop" class="backdrop" hidden></div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-small" aria-hidden="false">
+      <div class="hero-inner">
+        <h1>Construction Insights & Expert Blogs</h1>
+        <p>Trusted guides for clients and homeowners — topics on materials, energy-efficiency, cost planning and project
+          best-practices.</p>
+      </div>
+    </section>
+
+    <!-- SEARCH -->
+    <div class="blogs-section">
+      <div class="search-row">
+        <input id="search" placeholder="Search posts, e.g. 'sustainability' or 'heritage renovation'">
+      </div>
+
+      <!-- BLOGS GRID -->
+      <div class="blogs-grid" id="blogsGrid" aria-live="polite"></div>
+    </div>
+
+    <!-- BLOG MODAL -->
+    <div id="modal" class="modal" role="dialog" aria-hidden="true" aria-modal="true">
+      <div class="modal-card" role="document">
+        <div id="modalImg" class="modal-img" style="background-image: none;"></div>
+        <div class="modal-content">
+          <div class="post-meta-row">
+            <div id="modalTags" style="display:flex;gap:8px;flex-wrap:wrap;"></div>
+            <div style="margin-left:auto; color:var(--muted);" id="modalDate"></div>
+          </div>
+
+          <h2 id="modalTitle"></h2>
+          <p id="modalBody"></p>
+
+          <div class="modal-actions">
+            <a class="btn btn-outline" id="modalClose">Close</a>
+            <a class="btn btn-primary" href="#contact">Request Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+      <div class="container footer-grid">
+        <div class="f-left">
+          <div class="brand-lg">DarshanConstraction</div>
+          <p class="muted">Full-service construction firm delivering projects with integrity & skill.</p>
+
+          <form id="subscribe" class="subscribe">
+            <input id="email" type="email" placeholder="Your email" required>
+            <button class="btn btn-primary">Subscribe</button>
+          </form>
+
+          <div class="socials">
+            <a href="#" aria-label="Facebook" class="social">Fb</a>
+            <a href="#" aria-label="Instagram" class="social">Ig</a>
+            <a href="#" aria-label="LinkedIn" class="social">In</a>
+          </div>
+        </div>
+
+        <div class="f-links">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#work">Work</a>
+          <a href="#why">Why Us</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="f-contact">
+          <h4>Contact</h4>
+          <p>Phone: <a href="tel:+911234567890">+91-8104407455</a></p>
+          <p>Email: <a href="mailto:hello@DarshanConstraction.example">info@kasturiarchitects.com</a></p>
+          <p> B-1/549, Opposite HDFC Bank, Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan – 302021</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container fb-inner">
+          <small>© <span id="curYear"></span> Darshan Constraction — All rights reserved</small>
+          <button id="top" class="topbtn" aria-label="Back to top">↑</button>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Blog data: 6 SEO-friendly, knowledgeable posts
+    const POSTS = [
+      {
+        id: 1,
+        title: "Top 7 Construction Trends Transforming India in 2025",
+        date: "2025-06-10",
+        tags: ["Trends", "Sustainability", "Technology"],
+        img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format",
+        excerpt: "From modular construction to green materials and AI-driven design — a succinct guide to the trends shaping modern Indian construction.",
+        body: `<p><strong>Overview:</strong> The construction industry is changing rapidly. In 2025, modular builds, prefabrication, and smart building management systems are now mainstream.</p>
+               <h4>Key Trends</h4>
+               <ul>
+                 <li><strong>Modular & Prefab:</strong> Faster timelines, predictable costs and less waste.</li>
+                 <li><strong>Green Materials:</strong> Low-carbon concretes and reclaimed finishes.</li>
+                 <li><strong>Digital Twins & AI:</strong> Better planning and predictive maintenance.</li>
+               </ul>
+               <p><strong>Practical tip:</strong> Consider prefabricated MEP modules for multi-unit residential projects to cut onsite time.</p>`
+      },
+      {
+        id: 2,
+        title: "How to Plan Project Costs: A Practical Guide for Homeowners",
+        date: "2025-04-28",
+        tags: ["Costing", "Planning", "Clients"],
+        img: "https://plus.unsplash.com/premium_photo-1661414779271-d8478e2944bc?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        excerpt: "Budgeting for construction is often the most stressful part. This guide breaks down realistic cost categories and contingency planning.",
+        body: `<p>Construction budgets should be realistic and transparent. Break your budget into: sitework, structure, finishes, MEP, permits, and contingency.</p>
+               <h4>Budgeting tips</h4>
+               <ol>
+                 <li>Get multiple quotes for major trades.</li>
+                 <li>Allocate 8–12% contingency for minor changes; 15%+ for older/heritage buildings.</li>
+                 <li>Prioritise long-term value (quality MEP reduces lifecycle costs).</li>
+               </ol>
+               <p><strong>Checklist:</strong> Ask for a milestone-based payment schedule and clear scope documents before starting.</p>`
+      },
+      {
+        id: 3,
+        title: "Sustainable Building Practices That Actually Save Money",
+        date: "2025-03-12",
+        tags: ["Sustainability", "Savings", "Materials"],
+        img: "https://images.unsplash.com/photo-1764285337769-0bbac19cc84d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        excerpt: "Sustainability doesn't always increase costs — smart choices reduce energy and maintenance bills over the building lifecycle.",
+        body: `<p>Energy-efficient HVAC, high-performance glazing, and good insulation reduce operating costs. Consider lifecycle costs, not just upfront price.</p>
+               <h4>High-impact measures</h4>
+               <ul>
+                 <li>LED lighting + daylighting design</li>
+                 <li>Solar PV where rooftop area permits</li>
+                 <li>Water recycling and low-flow fixtures</li>
+               </ul>
+               <p>Many measures pay back within 3–7 years, depending on local energy prices.</p>`
+      },
+      {
+        id: 4,
+        title: "Heritage Renovation: Balancing Authenticity and Safety",
+        date: "2024-11-20",
+        tags: ["Renovation", "Heritage", "Safety"],
+        img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1200&auto=format",
+        excerpt: "Restoring heritage buildings requires sensitivity to original finishes while bringing modern safety and structural upgrades.",
+        body: `<p>Heritage projects should start with a survey and conservation plan. Always document existing conditions and consult conservation specialists.</p>
+               <h4>Common strategies</h4>
+               <ul>
+                 <li>Structural strengthening using minimally invasive techniques</li>
+                 <li>Reversibility: interventions should be reversible where possible</li>
+                 <li>Choose materials that match originals in look and performance</li>
+               </ul>
+               <p><em>Note:</em> Heritage restorations can take longer due to approvals — plan and budget accordingly.</p>`
+      },
+      {
+        id: 5,
+        title: "Effective Site Safety: Creating a Zero-Harm Culture",
+        date: "2024-08-05",
+        tags: ["Safety", "Site Management", "Training"],
+        img: "https://images.unsplash.com/photo-1662309376159-b95fb193d96b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        excerpt: "Safety isn't a policy — it's a culture. Learn practical steps to reduce incidents and foster accountability on site.",
+        body: `<p>Start with simple, enforceable rules. Use daily briefings, clear PPE standards and visible supervision.</p>
+               <h4>Practical steps</h4>
+               <ul>
+                 <li>Daily toolbox talks and visible signage</li>
+                 <li>Training for subcontractors and new workers</li>
+                 <li>Encourage reporting of near-misses (no blame)</li>
+               </ul>
+               <p>Safety reduces downtime and builds client confidence — it's also a legal obligation.</p>`
+      },
+      {
+        id: 6,
+        title: "Choosing the Right HVAC System for Your Building",
+        date: "2024-05-15",
+        tags: ["HVAC", "MEP", "Efficiency"],
+        img: "https://images.unsplash.com/photo-1613844044163-1ad2f2d0b152?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        excerpt: "HVAC is a major life-cycle cost. This article helps you compare systems, choose efficiencies and plan maintenance.",
+        body: `<p>Consider load profiles, occupancy patterns and local climate when choosing HVAC. Variable refrigerant flow (VRF) and heat pumps offer high efficiency for many applications.</p>
+               <h4>Selection checklist</h4>
+               <ul>
+                 <li>Calculate sensible and latent loads accurately</li>
+                 <li>Prioritise maintainability and accessible plant rooms</li>
+                 <li>Consider smart controls for demand-based operation</li>
+               </ul>
+               <p>Good design here can reduce energy consumption by 20–40% compared to poorly designed systems.</p>`
+      }
+    ];
+
+    // Utility: format date for display
+    function formatDate(iso) {
+      const d = new Date(iso);
+      const opts = { year: 'numeric', month: 'short', day: 'numeric' };
+      return d.toLocaleDateString(undefined, opts);
+    }
+
+    // Render cards
+    function renderPosts(list) {
+      const grid = document.getElementById('blogsGrid');
+      grid.innerHTML = '';
+      list.forEach(p => {
+        const el = document.createElement('article');
+        el.className = 'blog-card reveal';
+        el.setAttribute('tabindex', '0');
+        el.innerHTML = `
+          <div class="blog-img" style="background-image:url('${p.img}')"></div>
+          <div class="blog-body">
+            <div class="post-meta-row">
+              <div class="blog-meta">${formatDate(p.date)}</div>
+              <div style="margin-left:auto; display:flex; gap:8px;">
+                ${p.tags.slice(0, 2).map(t => `<span class="tag">${t}</span>`).join('')}
+              </div>
+            </div>
+            <h3 class="blog-title">${p.title}</h3>
+            <p class="blog-excerpt">${p.excerpt}</p>
+            <div class="blog-footer">
+              <a href="#" class="read-more" data-id="${p.id}">Read article →</a>
+              <a class="btn btn-outline" href="#contact">Contact</a>
+            </div>
+          </div>
+        `;
+        // click to open modal
+        el.querySelectorAll('[data-id]').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(p.id);
+          });
+        });
+        // keyboard accessible: Enter opens modal
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { openModal(p.id); e.preventDefault(); } });
+        grid.appendChild(el);
+      });
+
+      // small reveal
+      setTimeout(() => { document.querySelectorAll('.reveal').forEach((r, i) => setTimeout(() => r.classList.add('show'), i * 70)); }, 80);
+    }
+
+    // Modal functions
+    function openModal(id) {
+      const post = POSTS.find(x => x.id === id);
+      if (!post) return;
+      document.getElementById('modalImg').style.backgroundImage = `url('${post.img}')`;
+      document.getElementById('modalTitle').textContent = post.title;
+      document.getElementById('modalBody').innerHTML = post.body;
+      document.getElementById('modalDate').textContent = formatDate(post.date);
+      const tagsEl = document.getElementById('modalTags');
+      tagsEl.innerHTML = post.tags.map(t => `<span class="tag">${t}</span>`).join('');
+      const modal = document.getElementById('modal');
+      modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+      // trap focus simple
+      document.documentElement.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true');
+      document.documentElement.style.overflow = '';
+    }
+
+    // Search filter
+    function applySearch(q) {
+      q = (q || '').trim().toLowerCase();
+      if (!q) return renderPosts(POSTS);
+      const filtered = POSTS.filter(p => (p.title + ' ' + p.excerpt + ' ' + p.tags.join(' ')).toLowerCase().includes(q));
+      renderPosts(filtered);
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+      // year
+      const y = document.getElementById('curYear');
+      if (y) y.textContent = new Date().getFullYear();
+
+      renderPosts(POSTS);
+
+      // search
+      const s = document.getElementById('search');
+      if (s) s.addEventListener('input', (e) => applySearch(e.target.value));
+
+      // modal close handlers
+      document.getElementById('modalClose').addEventListener('click', closeModal);
+      document.getElementById('modal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('modal')) closeModal();
+      });
+
+      // subscribe demo
+      const sub = document.getElementById('subscribe');
+      if (sub) sub.addEventListener('submit', (e) => { e.preventDefault(); alert('Thanks — subscribed! (demo)'); sub.reset(); });
+
+      // top button
+      const top = document.getElementById('top');
+      if (top) top.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    });
+  </script>
+
+  <!-- keep this so drawer/hero etc continue working -->
+  <script src="./script.js"></script>
+</body>
+
+</html>

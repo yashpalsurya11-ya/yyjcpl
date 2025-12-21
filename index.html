@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Updated SEO title & meta -->
+  <title>DarshanConstraction — Modern Construction</title>
+  <meta name="description"
+    content="DarshanConstraction — Quality construction services for residential, commercial & renovation projects. On-time delivery, safety-first approach, and experienced teams. Request a free quote.">
+  <meta name="keywords"
+    content="construction company, residential construction, commercial fitout, renovation, contractor, DarshanConstraction">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="DarshanConstraction — Modern Construction">
+  <meta property="og:description"
+    content="Quality construction services — residential, commercial and renovation projects delivered on time.">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1170&auto=format&fit=crop">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data (LocalBusiness example) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"DarshanConstraction",
+    "image":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1170&auto=format&fit=crop",
+    "telephone":"+91-8104407455",
+    "email":"info@kasturiarchitects.com",
+    "address": {
+      "@type":"PostalAddress",
+      "streetAddress":"B-1/549, Opposite HDFC Bank, Chitrakoot, Vaishali Nagar",
+      "addressLocality":"Jaipur",
+      "addressRegion":"Rajasthan",
+      "postalCode":"302021",
+      "addressCountry":"IN"
+    },
+    "url":"https://example.com"
+  }
+  </script>
+
+  <!-- Font & original stylesheet reference (kept) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Inline enhancements (visual + testimonial card styles) -->
+  <style>
+    /* Minimal CSS additions to style testimonial cards & small layout polish
+       (keeps your original header/footer styles from /css/style.css intact) */
+    :root {
+      --muted: #6b7280;
+      --accent: #0ea5a4
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    .title {
+      font-size: 24px;
+      margin: 0 0 14px;
+      font-weight: 700
+    }
+
+    /* Testimonial cards */
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .test-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: transform .18s ease;
+    }
+
+    .test-card:hover {
+      transform: translateY(-6px)
+    }
+
+    .test-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #f3f4f6;
+    }
+
+    .test-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .test-body {
+      flex: 1;
+    }
+
+    .test-quote {
+      margin: 0 0 8px;
+      font-weight: 600;
+      color: #0b1220
+    }
+
+    .test-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .test-name {
+      font-weight: 700;
+      font-size: 14px
+    }
+
+    .test-role {
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 4px;
+      align-items: center
+    }
+
+    .star svg {
+      width: 16px;
+      height: 16px;
+      display: block
+    }
+
+    @media (max-width:640px) {
+      .container {
+        padding: 18px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <!-- (UNCHANGED: I preserved your original header markup exactly as you asked) -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <!-- small svg logo -->
+        <svg viewBox="0 0 64 64" class="logo" aria-hidden="true">
+          <rect x="6" y="26" width="10" height="26" rx="2" />
+          <rect x="22" y="18" width="10" height="34" rx="2" />
+          <rect x="38" y="10" width="10" height="42" rx="2" />
+        </svg>
+        <div class="brand-texts"><span class="brand-title">Darshan Constraction</span><span class="brand-sub">Quality •
+            Trust • Timely</span></div>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="About.html" class="nav-link">About us</a>
+        <a href="projects.html" class="nav-link">projects</a>
+        <a href="blogs.html" class="nav-link">Blogs</a>
+        <a href="contact.html" class="nav-link btn-ghost">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-primary">Get Quote</a>
+        <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span class="hb top"></span>
+          <span class="hb mid"></span>
+          <span class="hb bot"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile drawer -->
+    <div id="drawer" class="drawer" aria-hidden="true">
+      <div class="drawer-inner">
+        <button id="drawerClose" class="drawer-close" aria-label="Close menu">&times;</button>
+        <nav class="drawer-nav">
+          <a href="index.html" class="drawer-link">Home</a>
+          <a href="About.html" class="drawer-link">About us</a>
+          <a href="projects.html" class="drawer-link">Projects</a>
+          <a href="blogs.html" class="drawer-link">Vlogs</a>
+          <a href="contact.html" class="drawer-link">Contact</a>
+        </nav>
+        <div class="drawer-cta">
+          <a href="#contact" class="btn btn-primary full">Request Quote</a>
+          <a href="tel:+911234567890" class="btn btn-outline full">Call: +91 12345 67890</a>
+        </div>
+      </div>
+    </div>
+    <div id="backdrop" class="backdrop" hidden></div>
+  </header>
+
+  <main>
+
+    <!-- HERO (kept general layout; minor lazy loading of hero images for SEO perf) -->
+    <section id="home" class="hero">
+      <div class="hero-media" id="heroMedia" aria-hidden="false">
+        <img class="hero-img active"
+          data-src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1170&auto=format&fit=crop"
+          alt="Construction site with cranes and modern building" loading="lazy" />
+        <img class="hero-img"
+          data-src="https://plus.unsplash.com/premium_photo-1680281936362-aff258ecd143?q=80&w=700&auto=format&fit=crop"
+          alt="Architectural drawing and materials" loading="lazy" />
+        <img class="hero-img"
+          data-src="https://images.unsplash.com/photo-1428366890462-dd4baecf492b?q=80&w=1974&auto=format&fit=crop"
+          alt="Workers inspecting a building facade" loading="lazy" />
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-card">
+          <h1 class="hero-title">We build durable, beautiful spaces — on time.</h1>
+          <p class="hero-sub">Residential • Commercial • Renovation — expert project delivery & safety-first approach.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary large">Get Free Quote</a>
+            <a href="#work" class="btn btn-outline large">View Projects</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-num" id="countProjects" data-target="320">0</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">25+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-controls">
+          <div class="dots" id="heroDots" role="tablist" aria-label="Hero slides">
+            <button class="dot active" aria-selected="true" data-i="0"></button>
+            <button class="dot" data-i="1"></button>
+            <button class="dot" data-i="2"></button>
+          </div>
+
+          <a href="#work" class="scroll-down" aria-hidden="true">
+            <span class="chev"></span><small>Explore</small>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK SHOWCASE (unchanged content besides minor aria improvements) -->
+    <section id="work" class="work">
+      <div class="container">
+        <h2 class="title">Our Recent Work</h2>
+
+        <div class="grid-work">
+          <article class="work-large card">
+            <div class="thumb"
+              style="background-image:url('https://images.unsplash.com/photo-1760331840595-72c9681e7e71?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+              role="img" aria-label="Modern Residential Complex"></div>
+            <div class="card-body">
+              <h3>Modern Residential Complex</h3>
+              <p>48 multi-unit apartments with modern finishes & energy-efficient systems.</p>
+            </div>
+          </article>
+
+          <article class="work-small card">
+            <div class="thumb"
+              style="background-image:url('https://images.unsplash.com/photo-1520408534979-054bb60c33f9?q=80&w=1063&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+              role="img" aria-label="Commercial Fitout"></div>
+            <div class="card-body">
+              <h3>Commercial Fitout</h3>
+              <p>Open-plan office fitouts with optimized MEP and fast delivery.</p>
+            </div>
+          </article>
+
+          <article class="work-small card">
+            <div class="thumb"
+              style="background-image:url('https://images.unsplash.com/photo-1733145857483-67135326f3e4?q=80&w=689&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+              role="img" aria-label="Heritage Renovation"></div>
+            <div class="card-body">
+              <h3>Heritage Renovation</h3>
+              <p>Careful restoration with modern amenities and structural safety enhancements.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US (unchanged) -->
+    <section id="why" class="why">
+      <div class="container">
+        <h2 class="title">Why Choose Us</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="icon">🏗️</div>
+            <h4>Skilled Team</h4>
+            <p>Engineers, architects & site managers with proven delivery records.</p>
+          </div>
+          <div class="why-card">
+            <div class="icon">⏱️</div>
+            <h4>On-time Delivery</h4>
+            <p>Transparent schedules and milestone-driven execution.</p>
+          </div>
+          <div class="why-card">
+            <div class="icon">✅</div>
+            <h4>Quality Assurance</h4>
+            <p>Third-party testing & stringent final inspections.</p>
+          </div>
+          <div class="why-card">
+            <div class="icon">🔒</div>
+            <h4>Safety First</h4>
+            <p>Strict safety protocols and insured operations at every site.</p>
+          </div>
+          <div class="why-card">
+            <div class="icon">📹</div>
+            <h4>CCTV Surveillance</h4>
+            <p>Professional CCTV installation and monitoring systems for complete security.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (REPLACED: card layout with stars, photos, responsive) -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <h2 class="title">Testimonials</h2>
+
+        <div class="test-grid" id="testGrid" role="list">
+          <!-- testimonial card 1 -->
+          <article class="test-card" role="listitem" aria-label="Testimonial by R. Sharma">
+            <div class="test-avatar" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop"
+                alt="R. Sharma photo" loading="lazy">
+            </div>
+            <div class="test-body">
+              <p class="test-quote">"DarshanConstraction delivered our project on time and with exceptional quality."
+              </p>
+              <div class="test-meta">
+                <div>
+                  <div class="test-name">R. Sharma</div>
+                  <div class="test-role">Homeowner • Jaipur</div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars" title="5 stars">
+                  <!-- 5 star SVGs -->
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- testimonial card 2 -->
+          <article class="test-card" role="listitem" aria-label="Testimonial by S. Mehta">
+            <div class="test-avatar" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1545996124-1f5a2f7b6cdd?q=80&w=400&auto=format&fit=crop"
+                alt="S. Mehta photo" loading="lazy">
+            </div>
+            <div class="test-body">
+              <p class="test-quote">"Professional team, transparent process — great experience."</p>
+              <div class="test-meta">
+                <div>
+                  <div class="test-name">S. Mehta</div>
+                  <div class="test-role">Office Manager • Jaipur</div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars" title="5 stars">
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- testimonial card 3 -->
+          <article class="test-card" role="listitem" aria-label="Testimonial by A. Kapoor">
+            <div class="test-avatar" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=400&auto=format&fit=crop"
+                alt="A. Kapoor photo" loading="lazy">
+            </div>
+            <div class="test-body">
+              <p class="test-quote">"They restored our heritage home beautifully."</p>
+              <div class="test-meta">
+                <div>
+                  <div class="test-name">A. Kapoor</div>
+                  <div class="test-role">Heritage Owner • Jaipur</div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars" title="5 stars">
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                  <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#f6d365">
+                      <path d="M12 2.5l2.9 6 6.6.6-5 3.9 1.6 6.4L12 17.8 6 20.8l1.6-6.4-5-3.9 6.6-.6L12 2.5z" />
+                    </svg></span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT + FOOTER -->
+    <!-- (UNCHANGED: I preserved your original footer markup exactly as you asked) -->
+    <footer id="contact" class="footer">
+      <div class="container footer-grid">
+        <div class="f-left">
+          <div class="brand-lg">DarshanConstraction</div>
+          <p class="muted">Full-service construction firm delivering projects with integrity & skill.</p>
+
+          <form id="subscribe" class="subscribe">
+            <input id="email" type="email" placeholder="Your email" required>
+            <button class="btn btn-primary">Subscribe</button>
+          </form>
+
+          <div class="socials">
+            <a href="#" aria-label="Facebook" class="social">Fb</a>
+            <a href="#" aria-label="Instagram" class="social">Ig</a>
+            <a href="#" aria-label="LinkedIn" class="social">In</a>
+          </div>
+        </div>
+
+        <div class="f-links">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#work">Work</a>
+          <a href="#why">Why Us</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="f-contact">
+          <h4>Contact</h4>
+          <p>Phone: <a href="tel:+911234567890">+91-8104407455</a></p>
+          <p>Email: <a href="mailto:hello@buildright.example">info@kasturiarchitects.com</a></p>
+          <p> B-1/549, Opposite HDFC Bank, Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan – 302021</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container fb-inner">
+          <small>© <span id="curYear"></span> DarshanConstraction — All rights reserved</small>
+          <button id="top" class="topbtn" aria-label="Back to top">↑</button>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- small script for hero lazy-init, project counter, and accessible testimonial keyboard focus -->
+  <script>
+    // current year
+    document.getElementById('curYear').textContent = new Date().getFullYear();
+
+    // lazy-load hero images & rotate
+    (function () {
+      const imgs = document.querySelectorAll('.hero-media img');
+      imgs.forEach(img => {
+        const s = img.getAttribute('data-src');
+        if (s) { img.src = s; img.removeAttribute('data-src'); }
+      });
+      let i = 0;
+      if (imgs.length > 1) {
+        setInterval(() => {
+          imgs.forEach((im, idx) => im.classList.toggle('active', idx === i));
+          i = (i + 1) % imgs.length;
+        }, 4500);
+      }
+    })();
+
+    // animate countProjects (accessible)
+    (function () {
+      const el = document.getElementById('countProjects');
+      if (!el) return;
+      const target = parseInt(el.getAttribute('data-target') || '320', 10);
+      let cur = 0;
+      const step = Math.max(1, Math.floor(target / 60));
+      const id = setInterval(() => {
+        cur += step;
+        if (cur >= target) { el.textContent = target; clearInterval(id); }
+        else el.textContent = cur;
+      }, 18);
+    })();
+
+    // make testimonial cards focusable and keyboard navigable
+    (function () {
+      const grid = document.getElementById('testGrid');
+      if (!grid) return;
+      const cards = Array.from(grid.querySelectorAll('.test-card'));
+      cards.forEach((c, idx) => {
+        c.setAttribute('tabindex', '0');
+        c.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') { const next = cards[idx + 1]; if (next) next.focus(); e.preventDefault(); }
+          if (e.key === 'ArrowLeft') { const prev = cards[idx - 1]; if (prev) prev.focus(); e.preventDefault(); }
+        });
+      });
+    })();
+
+    // back to top button in footer (keeps original id)
+    document.getElementById('top').addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  </script>
+
+  <!-- original script reference preserved -->
+  <script src="./script.js"></script>
+</body>
+
+</html>

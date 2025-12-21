@@ -1,0 +1,382 @@
+/* about.css - styles specific to About page */
+/* Keep header.css & footer.css loaded as well */
+
+/* Variables (match site palette) */
+:root {
+  --bg: #fff8f0;
+  --card: #fff;
+  --brand: #E65100;
+  --accent: #FFB74D;
+  --muted: #6b7280;
+  --shadow: 0 14px 40px rgba(230, 81, 0, 0.12);
+  --radius: 14px;
+  --container: 1100px;
+}
+
+/* container helper (if not in header.css) */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 16px
+}
+
+/* ABOUT HERO */
+.about-hero {
+  padding: 28px 0;
+  background: linear-gradient(180deg, #fff8f0, #ffe8d6)
+}
+
+.about-hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0
+}
+
+.about-hero-left {
+  width: 100%;
+  text-align: center
+}
+
+.about-hero-right {
+  width: 100%
+}
+
+/* Title & lead */
+.about-hero h1 {
+  font-size: 22px;
+  margin: 0 0 10px;
+  color: var(--brand)
+}
+
+.lead {
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 12px
+}
+
+/* KPIs row */
+.kpis {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 8px 0 14px
+}
+
+.kpi {
+  background: var(--card);
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  min-width: 110px
+}
+
+.kpi-val {
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--accent)
+}
+
+.kpi-label {
+  color: var(--muted);
+  font-size: 13px
+}
+
+/* hero CTAs */
+.hero-ctas {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 8px
+}
+
+/* founder card */
+.founder-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--card);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: var(--shadow)
+}
+
+.founder-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.founder-info h3 {
+  margin: 0 0 6px;
+  color: var(--brand)
+}
+
+.role {
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 8px
+}
+
+.founder-cta .btn-outline {
+  display: inline-block
+}
+
+/* award strip */
+.award-strip {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap
+}
+
+.award {
+  background: linear-gradient(90deg, #fff, #fff);
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: var(--brand);
+  box-shadow: 0 6px 20px rgba(5, 10, 8, 0.04);
+  font-weight: 700
+}
+
+/* TIMELINE */
+.timeline-section {
+  padding: 28px 0
+}
+
+.timeline {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px
+}
+
+.tl-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--card);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all .6s cubic-bezier(.2, .9, .25, 1)
+}
+
+.tl-item.in-view {
+  transform: none;
+  opacity: 1
+}
+
+.tl-year {
+  font-weight: 900;
+  color: var(--brand);
+  min-width: 72px;
+  font-size: 18px;
+  text-align: center
+}
+
+.tl-body h4 {
+  margin: 0 0 6px
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 6px
+}
+
+/* TEAM GRID */
+.team-section {
+  padding: 28px 0
+}
+
+.team-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  justify-content: center
+}
+
+.team-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 10px;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: var(--shadow);
+  text-align: center
+}
+
+.team-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px
+}
+
+.team-card.more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column
+}
+
+/* VALUES */
+.values-section {
+  padding: 28px 0;
+  background: linear-gradient(180deg, #fff, #fff8f0)
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 12px
+}
+
+.value {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow)
+}
+
+/* CTA */
+.about-cta {
+  padding: 20px 16px
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #fff, #fff8f0);
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow)
+}
+
+.cta-box h3 {
+  margin: 0 0 6px;
+  color: var(--brand)
+}
+
+/* FOOTER tweaks (if needed) */
+.site-footer {
+  margin-top: 18px
+}
+
+/* Small phones */
+@media(max-width:479px) {
+  .about-hero h1 {
+    font-size: 20px
+  }
+
+  .kpis {
+    gap: 12px
+  }
+
+  .kpi {
+    min-width: 100px;
+    padding: 8px 12px
+  }
+
+  .kpi-val {
+    font-size: 18px
+  }
+
+  .founder-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center
+  }
+
+  .founder-photo {
+    width: 100px;
+    height: 100px
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 100%
+  }
+
+  .team-card img {
+    height: 120px
+  }
+}
+
+/* Larger phones */
+@media(min-width:480px) {
+  .about-hero h1 {
+    font-size: 24px
+  }
+
+  .kpi {
+    min-width: 120px
+  }
+
+  .team-card {
+    width: 48%;
+    max-width: none
+  }
+}
+
+/* SMALL SCREEN adjustments */
+@media(min-width:720px) {
+  .about-hero-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start
+  }
+
+  .about-hero-left {
+    width: 58%;
+    text-align: left
+  }
+
+  .about-hero-right {
+    width: 38%
+  }
+
+  .kpis {
+    justify-content: flex-start
+  }
+
+  .timeline {
+    gap: 18px
+  }
+
+  .team-card {
+    width: 23%
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr)
+  }
+}
+
+/* DESKTOP */
+@media(min-width:1100px) {
+  .about-hero {
+    padding: 40px 0
+  }
+
+  .founder-photo {
+    width: 160px;
+    height: 160px
+  }
+
+  .team-card {
+    width: 18%
+  }
+}

@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DarshanConstraction — Contact</title>
+  <meta name="description"
+    content="Contact DarshanConstraction — request a quote, schedule a consultation or ask about our construction & renovation services." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+    :root {
+      /* Orange Theme */
+      --brand: #E65100;
+      --brand-2: #FF6F00;
+      --brand-light: #FFE0B2;
+      --accent: #FFB74D;
+      --muted: #6b7280;
+      --text: #0f172a;
+      --bg: #fff8f0;
+      --radius: 14px;
+      --shadow-soft: 0 22px 60px rgba(230, 81, 0, 0.09);
+      --max: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: var(--bg);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header/Footer styles removed to use style.css defaults */
+
+    /* Contact page styles (kept from your original) */
+    .contact-hero {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(230, 81, 0, 0.16) 0, transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(230, 81, 0, 0.13) 0, transparent 55%),
+        var(--bg);
+      padding: 56px 18px 40px;
+    }
+
+    .hero-shell {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .hero-copy {
+      max-width: 540px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(230, 81, 0, 0.08);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--brand);
+    }
+
+    .hero-copy h1 {
+      margin: 10px 0 8px;
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 18px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-stat {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(6, 12, 10, 0.06);
+      font-weight: 600;
+    }
+
+    .hero-visual {
+      flex: 1;
+      min-width: 260px;
+      max-width: 380px;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 20px;
+      padding: 18px 18px 16px;
+      background: linear-gradient(135deg, var(--brand-2), var(--brand));
+      color: #ffffff;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -40%;
+      height: 140px;
+      background: radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.22) 0, transparent 60%);
+      opacity: .7;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 4px;
+      font-size: 18px;
+    }
+
+    .hero-card p {
+      margin: 0 0 12px;
+      font-size: 13px;
+      opacity: 0.94;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      opacity: 0.76;
+      letter-spacing: 0.13em;
+    }
+
+    .hero-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .hero-line strong {
+      font-weight: 700;
+    }
+
+    .contact-shell {
+      max-width: var(--max);
+      margin: -18px auto 60px;
+      padding: 0 18px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .form-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 22px 20px;
+      border: 1px solid rgba(6, 12, 10, 0.04);
+    }
+
+    .form-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .form-header h2 {
+      margin: 0;
+      font-size: 20px;
+      color: var(--brand);
+    }
+
+    .form-header p {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .form-tag {
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--brand-light);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--brand);
+      white-space: nowrap;
+    }
+
+    .field {
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .field span.helper {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(6, 12, 10, 0.08);
+      font-size: 14px;
+      outline: none;
+      background: #ffffff;
+      transition: box-shadow .16s ease, border-color .16s ease, transform .06s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(230, 81, 0, 0.75);
+      box-shadow: 0 0 0 1px rgba(230, 81, 0, 0.25);
+      transform: translateY(-1px);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .row .field {
+      flex: 1;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .note {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .info-card {
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      background: linear-gradient(180deg, var(--brand), var(--brand-2));
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card::before {
+      content: "";
+      position: absolute;
+      inset: -40% 40% auto auto;
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.21) 0, transparent 60%);
+      opacity: .85;
+      pointer-events: none;
+    }
+
+    .info-card h3 {
+      margin: 0;
+      font-size: 17px;
+    }
+
+    .info-section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-row {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      font-size: 13px;
+      margin: 2px 0;
+    }
+
+    .info-row strong {
+      font-weight: 700;
+      min-width: 54px;
+    }
+
+    .info-row a {
+      color: #e1fff2;
+      text-decoration: underline dotted rgba(225, 255, 242, 0.6);
+    }
+
+    .info-pill {
+      display: inline-flex;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(236, 255, 246, 0.6);
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .map {
+      margin-top: 8px;
+      border-radius: 12px;
+      height: 140px;
+      background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .info-cta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .info-cta .btn-outline {
+      border-color: rgba(229, 255, 244, 0.7);
+      color: #e9fff5;
+      background: rgba(0, 0, 0, 0.05);
+      padding: 7px 11px;
+      font-size: 13px;
+    }
+
+    .tiny-text {
+      font-size: 11px;
+      opacity: 0.86;
+      margin-top: 4px;
+    }
+
+    /* Footer styles removed to use style.css defaults */
+
+    @media(max-width:900px) {
+      .nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+        margin-left: auto;
+      }
+
+      .header-actions {
+        margin-left: auto;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        margin-top: 16px;
+      }
+
+      .info-card {
+        order: -1;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:640px) {
+      .hero-shell {
+        flex-direction: column;
+      }
+
+      .hero-copy h1 {
+        font-size: 26px;
+      }
+
+      .form-card,
+      .info-card {
+        padding: 18px 16px;
+      }
+
+      .row {
+        flex-direction: column;
+      }
+
+      .note {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+
+    /* Toast (Outcome notification) */
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--brand-2), var(--brand));
+      color: #fff;
+      font-size: 13px;
+      display: none;
+      box-shadow: 0 10px 40px var(--shadow-soft);
+      z-index: 900;
+    }
+
+    .toast.show {
+      display: block;
+      animation: fadeUp .28s cubic-bezier(.2, .9, .2, 1);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER (synced with index.html) -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 64 64" class="logo" aria-hidden="true">
+          <rect x="6" y="26" width="10" height="26" rx="2" />
+          <rect x="22" y="18" width="10" height="34" rx="2" />
+          <rect x="38" y="10" width="10" height="42" rx="2" />
+        </svg>
+        <div class="brand-texts"><span class="brand-title">Darshan Constraction</span><span class="brand-sub">Quality •
+            Trust • Timely</span></div>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About us</a>
+        <a href="projects.html" class="nav-link">projects</a>
+        <a href="blogs.html" class="nav-link">Blogs</a>
+        <a href="contact.html" class="nav-link active" style="color:var(--brand)">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-primary">Get Quote</a>
+        <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span class="hb top"></span>
+          <span class="hb mid"></span>
+          <span class="hb bot"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile drawer -->
+    <div id="drawer" class="drawer" aria-hidden="true">
+      <div class="drawer-inner">
+        <button id="drawerClose" class="drawer-close" aria-label="Close menu">&times;</button>
+        <nav class="drawer-nav">
+          <a href="index.html" class="drawer-link">Home</a>
+          <a href="about.html" class="drawer-link">About us</a>
+          <a href="projects.html" class="drawer-link">Projects</a>
+          <a href="blogs.html" class="drawer-link">Vlogs</a>
+          <a href="contact.html" class="drawer-link">Contact</a>
+        </nav>
+        <div class="drawer-cta">
+          <a href="#contact" class="btn btn-primary full">Request Quote</a>
+          <a href="tel:+911234567890" class="btn btn-outline full">Call: +91 12345 67890</a>
+        </div>
+      </div>
+    </div>
+    <div id="backdrop" class="backdrop" hidden></div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="contact-hero">
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <div class="badge">Contact our project desk</div>
+          <h1>Tell us about your site — we’ll plan the build around you.</h1>
+          <p>Share a quick overview and our construction consultant will call you back with timelines, costs and next
+            steps.</p>
+
+          <div class="hero-meta">
+            <div class="hero-stat">⏱ Average response in under 6 hours</div>
+            <div class="hero-stat">🏗 120+ completed projects</div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-label">Dedicated project coordinator</div>
+            <h2>Speak directly with a builder, not a call center.</h2>
+            <p>Once we receive your request, we assign a coordinator who stays with your project from first sketch to
+              handover.</p>
+
+            <div class="hero-line">
+              <span>📞 Call us now</span>
+              <strong>+91-8104407455</strong>
+            </div>
+            <div class="hero-line">
+              <span>📍 Based in</span>
+              <strong>Jaipur, Rajasthan – 302021</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-shell">
+      <div class="contact-grid">
+        <!-- form -->
+        <form id="contactForm" class="form-card" novalidate>
+          <div class="form-header">
+            <div>
+              <h2>Request a project callback</h2>
+              <p>Fill in a few details so we can prepare before we call. It usually takes less than a minute.</p>
+            </div>
+            <div class="form-tag">No spam • No sharing</div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="service">Type of project</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option value="residential">New residential construction</option>
+                <option value="commercial">Commercial / office fitout</option>
+                <option value="renovation">Renovation or extension</option>
+                <option value="sustainability">Green / sustainability upgrade</option>
+                <option value="other">Just need expert advice</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="timeline">Expected start</label>
+              <select id="timeline" name="timeline">
+                <option value="">Choose timeline</option>
+                <option value="1month">Within 1 month</option>
+                <option value="3months">1–3 months</option>
+                <option value="6months">3–6 months</option>
+                <option value="flexible">Flexible / not sure</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Project snapshot</label>
+            <span class="helper">Location, rough budget and any constraints (1–3 short lines).</span>
+            <textarea id="message" name="message"
+              placeholder="Example: 3BHK home in South Indore, plot ready, want cost estimate and timeline."
+              required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submitBtn">Submit request</button>
+            <button type="reset" class="btn btn-outline">Clear form</button>
+            <div class="note">We usually reply within 1 business day.</div>
+          </div>
+        </form>
+
+        <!-- info side -->
+        <aside class="info-card" aria-label="Contact information">
+          <div class="info-section">
+            <h3>Talk to DarshanConstraction directly</h3>
+            <p class="tiny-text">Prefer a call instead of forms? Reach out using the details below and ask for the
+              project desk.</p>
+
+            <div class="info-row">
+              <strong>Phone</strong>
+              <span><a href="tel:+911234567890">+91-8104407455</a></span>
+            </div>
+            <div class="info-row">
+              <strong>Email</strong>
+              <span><a href="mailto:hello@DarshanConstraction.example">info@kasturiarchitects.com</a></span>
+            </div>
+            <div class="info-row">
+              <strong>Office</strong>
+              <span>B-1/549, Opposite HDFC Bank, Chitrakoot, Vaishali Nagar,</span>
+            </div>
+
+            <div class="info-pill">Mon–Sat · 10:00 AM – 7:00 PM</div>
+            <div class="tiny-text">Site visits are scheduled after the first consultation so we don’t waste your time.
+            </div>
+          </div>
+
+          <div class="info-section">
+            <h3>Project showcase & visits</h3>
+            <div class="map" role="img" aria-label="Map placeholder for BuildRight office"></div>
+            <div class="info-cta">
+              <a class="btn btn-outline" href="projects.html">View recent projects</a>
+              <a class="btn btn-outline" href="about.html">About our team</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">Message sent — we will contact you soon.</div>
+
+    <!-- FOOTER (synced with index.html) -->
+    <footer id="contact" class="footer">
+      <div class="container footer-grid">
+        <div class="f-left">
+          <div class="brand-lg">DarshanConstraction</div>
+          <p class="muted">Full-service construction firm delivering projects with integrity & skill.</p>
+
+          <form id="subscribe" class="subscribe">
+            <input id="email" type="email" placeholder="Your email" required>
+            <button class="btn btn-primary">Subscribe</button>
+          </form>
+
+          <div class="socials">
+            <a href="#" aria-label="Facebook" class="social">Fb</a>
+            <a href="#" aria-label="Instagram" class="social">Ig</a>
+            <a href="#" aria-label="LinkedIn" class="social">In</a>
+          </div>
+        </div>
+
+        <div class="f-links">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#work">Work</a>
+          <a href="#why">Why Us</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="f-contact">
+          <h4>Contact</h4>
+          <p>Phone: <a href="tel:+911234567890">+91-8104407455</a></p>
+          <p>Email: <a href="mailto:hello@buildright.example">info@kasturiarchitects.com</a></p>
+          <p> B-1/549, Opposite HDFC Bank, Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan – 302021</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container fb-inner">
+          <small>© <span id="curYear"></span> DarshanConstraction — All rights reserved</small>
+          <button id="top" class="topbtn" aria-label="Back to top">↑</button>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // ====== CONFIG ======
+    const API_CONTACT_URL = 'send_mail.php';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const curYear = document.getElementById('curYear');
+      if (curYear) curYear.textContent = new Date().getFullYear();
+
+      const toast = document.getElementById('toast');
+      function showToast(msg) {
+        if (!toast) { alert(msg); return; }
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4200);
+      }
+
+      // Contact form submit with fetch -> backend
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          // simple client-side validation
+          const name = (document.getElementById('name') || {}).value.trim();
+          const email = (document.getElementById('email') || {}).value.trim();
+          const phone = (document.getElementById('phone') || {}).value.trim();
+          const message = (document.getElementById('message') || {}).value.trim();
+
+          if (!name) { showToast('Please enter your name.'); document.getElementById('name').focus(); return; }
+          if (!email || !/^\S+@\S+\.\S+$/.test(email)) { showToast('Please enter a valid email.'); document.getElementById('email').focus(); return; }
+          if (!phone) { showToast('Please enter your phone number.'); document.getElementById('phone').focus(); return; }
+          if (!message) { showToast('Please add a short project snapshot.'); document.getElementById('message').focus(); return; }
+
+          // disable submit button while sending
+          const oldText = submitBtn ? submitBtn.textContent : null;
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+
+          try {
+            // Use FormData to send data in a format PHP can read via $_POST
+            const formData = new FormData(form);
+
+            const res = await fetch(API_CONTACT_URL, {
+              method: 'POST',
+              body: formData,
+            });
+
+            const data = await res.json().catch(() => ({ ok: false, error: 'Network response was not JSON' }));
+            if (res.ok && data.ok) {
+              showToast('Thanks — your project request has been received.');
+              form.reset();
+            } else {
+              const err = data && data.error ? data.error : ('Failed to send message (' + (res.status || 'err') + ')');
+              showToast(err);
+            }
+          } catch (err) {
+            console.error('Network error:', err);
+            showToast('Network error. Please try again later.');
+          } finally {
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = oldText; }
+          }
+        });
+      }
+
+      // subscribe demo (local)
+      const sub = document.getElementById('subscribe');
+      if (sub) {
+        sub.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const email = document.getElementById('subEmail');
+          const val = (email && email.value || '').trim();
+          if (!val || !/^\S+@\S+\.\S+$/.test(val)) { showToast('Enter a valid email to subscribe.'); email && email.focus(); return; }
+          showToast('Subscribed to DarshanConstraction updates (demo).');
+          sub.reset();
+        });
+      }
+
+      // Back to top
+      const topBtn = document.getElementById('top');
+      if (topBtn) topBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+      // No inline drawer logic needed, handled by script.js
+    });
+  </script>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
