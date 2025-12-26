@@ -236,11 +236,11 @@
 
           <div class="hero-stats">
             <div class="stat">
-              <div class="stat-num" id="countProjects" data-target="320">0</div>
+              <div class="stat-num" id="countProjects" data-target="80">0</div>
               <div class="stat-label">Projects Completed</div>
             </div>
             <div class="stat">
-              <div class="stat-num">25+</div>
+              <div class="stat-num">10</div>
               <div class="stat-label">Years Experience</div>
             </div>
             <div class="stat">
@@ -479,6 +479,7 @@
           <a href="#why">Why Us</a>
           <a href="#testimonials">Testimonials</a>
           <a href="#contact">Contact</a>
+          <a href="terms.html">Terms & Conditions</a>
         </div>
 
         <div class="f-contact">
@@ -524,7 +525,7 @@
     (function () {
       const el = document.getElementById('countProjects');
       if (!el) return;
-      const target = parseInt(el.getAttribute('data-target') || '320', 10);
+      const target = parseInt(el.getAttribute('data-target') || '80', 10);
       let cur = 0;
       const step = Math.max(1, Math.floor(target / 60));
       const id = setInterval(() => {

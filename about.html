@@ -127,9 +127,14 @@
       gap: 12px
     }
 
-    @media(min-width:720px) {
+    .team-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    @media(max-width:720px) {
       .team-grid {
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(2, 1fr)
       }
     }
 
@@ -149,6 +154,10 @@
       transition: all 650ms cubic-bezier(.2, .9, .2, 1)
     }
 
+    .member {
+      cursor: pointer;
+    }
+
     .member img {
       width: 100%;
       height: 200px;
@@ -156,12 +165,20 @@
       border-radius: 10px;
       margin-bottom: 10px;
       filter: grayscale(40%);
-      transition: filter .36s, transform .36s
+      transition: filter .36s, transform .36s, border .3s;
+      border: 3px solid transparent;
     }
 
     .member:hover img {
       filter: grayscale(0%);
       transform: scale(1.03)
+    }
+
+
+    /* When hovering over team grid, add orange border to all member images */
+    .team-grid:hover .member img {
+      border: 3px solid #FF6F00;
+      filter: grayscale(0%);
     }
 
     /* timeline / graph */
@@ -431,30 +448,36 @@
         <h2 class="title">Our Team</h2>
         <div class="team-grid" style="margin-top:12px;">
           <div class="member" data-reveal>
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop"
-              alt="Ravi Patel — Head of Projects">
+            <img src="/Sunil.jpeg" alt="Ravi Patel — Supervisor">
             <strong>Ravi Patel</strong>
-            <div style="color:var(--muted);font-size:13px">Head of Projects</div>
-            <p style="font-size:13px;margin-top:8px">Civil engineer with 12+ years of experience delivering high-quality
-              residential complexes.</p>
+            <div style="color:var(--muted);font-size:13px">Supervisor</div>
+            <p style="font-size:13px;margin-top:8px">Experienced supervisor with 5+ years overseeing construction
+              projects, ensuring quality standards and timely completion.</p>
           </div>
 
+
+
           <div class="member" data-reveal>
-            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop"
-              alt="Neha Sharma — Architect">
+            <img src="Sonu.jpeg" alt="Sonu — Supervisor">
+            <strong>Sonu</strong>
+            <div style="color:var(--muted);font-size:13px">Supervisor</div>
+            <p style="font-size:13px;margin-top:8px">Dedicated supervisor with 5+ years managing site operations, safety
+              protocols and coordinating contractor teams.</p>
+          </div>
+          <div class="member" data-reveal>
+            <img src="/Sawerji.jpeg" alt="Sawer — Supervisor">
+            <strong>Sawer</strong>
+            <div style="color:var(--muted);font-size:13px">Supervisor</div>
+            <p style="font-size:13px;margin-top:8px">Skilled supervisor with 5+ years expertise in project monitoring,
+              resource management and maintaining construction schedules.</p>
+          </div>
+          <div class="member" data-reveal>
+            <img src="/Ritu.jpeg" alt="Neha Sharma — Receptionist">
             <strong>Neha Sharma</strong>
-            <div style="color:var(--muted);font-size:13px">Architect</div>
-            <p style="font-size:13px;margin-top:8px">Design lead focused on functional, efficient and beautiful spaces.
+            <div style="color:var(--muted);font-size:13px">Receptionist</div>
+            <p style="font-size:13px;margin-top:8px">Professional receptionist with 5+ years experience handling client
+              communications, scheduling and administrative support.
             </p>
-          </div>
-
-          <div class="member" data-reveal>
-            <img
-              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Ajay Singh — Site Manager">
-            <strong>Ajay Singh</strong>
-            <div style="color:var(--muted);font-size:13px">Site Manager</div>
-            <p style="font-size:13px;margin-top:8px">Ensures safety, scheduling and coordination across contractors.</p>
           </div>
         </div>
       </div>
@@ -685,6 +708,7 @@
           <a href="#why">Why Us</a>
           <a href="#testimonials">Testimonials</a>
           <a href="#contact">Contact</a>
+          <a href="terms.html">Terms & Conditions</a>
         </div>
 
         <div class="f-contact">
@@ -723,7 +747,7 @@
             // if it's the projects stat, animate count
             if (el === statProjects || el.contains(statProjects)) {
               // animate 0 -> 320
-              const target = 320;
+              const target = 80;
               let start = performance.now();
               const dur = 1400;
               function step(now) {
