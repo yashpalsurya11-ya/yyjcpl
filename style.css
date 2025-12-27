@@ -69,8 +69,9 @@ img {
 }
 
 .logo {
-  width: 44px;
-  height: 44px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
   fill: var(--brand)
 }
 
@@ -439,7 +440,9 @@ img {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(8, 12, 10, 0.06);
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  border: 3px solid transparent;
+  transition: border .3s ease
 }
 
 .thumb {
@@ -451,6 +454,10 @@ img {
 
 .card:hover .thumb {
   transform: scale(1.04) translateY(-6px)
+}
+
+.card:hover {
+  border: 3px solid #FF6F00;
 }
 
 .card-body {
@@ -481,11 +488,13 @@ img {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition: transform .28s
+  transition: transform .28s, border .3s ease;
+  border: 3px solid transparent;
 }
 
 .why-card:hover {
-  transform: translateY(-6px)
+  transform: translateY(-6px);
+  border: 3px solid #FF6F00;
 }
 
 .icon {
